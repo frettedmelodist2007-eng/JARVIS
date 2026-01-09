@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 10;
+  --background-end-rgb: 0, 0, 0;
+  --jarvis-cyan: #00f3ff;
+  --jarvis-blue: #0077ff;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* JARVIS UI Elements */
+.jarvis-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.jarvis-card {
+  background: rgba(10, 20, 30, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.jarvis-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--jarvis-cyan), transparent);
+}
+
+.jarvis-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(180deg, #fff, var(--jarvis-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.jarvis-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--jarvis-cyan);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.jarvis-input, .jarvis-select {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.jarvis-input:focus, .jarvis-select:focus {
+  outline: none;
+  border-color: var(--jarvis-cyan);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.jarvis-button {
+  width: 100%;
+  background: linear-gradient(45deg, var(--jarvis-blue), #00c3ff);
+  border: none;
+  color: #000;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.jarvis-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.4);
+}
+
+.jarvis-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.jarvis-output {
+  margin-top: 2rem;
+  background: rgba(0, 20, 40, 0.8);
+  border: 1px solid var(--jarvis-cyan);
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.jarvis-output::after {
+  content: 'GENERATED OUTPUT';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: #000;
+  color: var(--jarvis-cyan);
+  padding: 0 10px;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 243, 255, 0.1);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  color: var(--jarvis-cyan);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background: rgba(0, 243, 255, 0.2);
+}
+
+/* Arc Reactor Loading Animation */
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(0,0,0,0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+}
