@@ -155,6 +155,11 @@ Ethical and responsible AI usage
 👉 Download APK from Releases (link below)
 
 
+## 📥 Download Android APK
+👉 ## 📥 Download Android APK
+👉 https://github.com/frettedmelodist2007-eng/JARVIS/releases/download/v1.0.0/app-debug.apk
+
+
 
 
 
