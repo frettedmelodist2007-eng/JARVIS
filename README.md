@@ -146,5 +146,17 @@ No generation of false or misleading information
 Ethical and responsible AI usage
 
 
+# 📱 My App Name
+
+## 🌐 Web App
+👉 https://jarvis-three-alpha.vercel.app/
+
+## 📦 Android App (APK)
+👉 Download APK from Releases (link below)
+
+
+
+
+
 
 
